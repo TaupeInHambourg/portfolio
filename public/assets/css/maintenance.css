@@ -1,0 +1,30 @@
+#maintenance{
+    background: no-repeat url('../img/hero.png');
+    background-size:cover;
+    background-position: bottom;
+    height: 100dvh;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    @media only screen and (max-width:767px) {
+        flex-direction:column;
+        padding:25px;
+    }
+}
+
+.hero > h1{
+    font-size: 60px;
+    padding-bottom:15px;
+    @media only screen and (max-width:767px) {
+        font-size:35px;
+    }
+}
+.hero > p{
+    font-size:30px;
+    padding-bottom:60px;
+    @media only screen and (max-width:767px) {
+        font-size:20px;
+        padding-bottom:40px;
+    }
+}

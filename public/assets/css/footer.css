@@ -1,0 +1,41 @@
+footer {
+  color: var(--light-yellow);
+
+  > div:first-child{
+    background-color: var(--main-blue);
+    height: 800px;
+    margin: 0 200px;
+    border-radius: 5px;
+    padding: 0 127px;
+    position: absolute;
+
+
+    > h3 {
+      padding-top:80px;
+    }
+
+    > p {
+      font-size:24px;
+    }
+  }
+
+  > div:last-child{
+    background-image: url('../img/footer.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+    z-index: 1;
+    bottom: 0;
+    height: 305px;
+    top: 495px;
+
+    > p {
+      margin: 0;
+      padding-bottom: 0.7vh;
+      font-size: 14px;
+    }
+  }
+}
