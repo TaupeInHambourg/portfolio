@@ -39,7 +39,7 @@ header{
 .parallax {
     /* overflow: hidden; */
     position: relative;
-    z-index: 0;
+    z-index: 1;
     min-height: 95vh;
     display: grid;
     grid-template-areas: "stack";
@@ -115,12 +115,56 @@ header{
 
 .primary-header {
     padding-block: 2rem;
+
+    >.logo {
+        max-width: 100px;
+        position: relative;
+    }
+
+    >#hero-header{
+        >.primary-header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: uppercase;
+        }
+
+    }
 }
 
-.primary-header__inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.scrolling-header {
+    position:fixed;
+    top:3vh;
+    width:70vw;
+    background-color: var(--700-pink);
+    border-radius:5px;
+    padding-block: .5rem;
+    margin: 0 290px;
+    animation-name: fade-in;
+    animation-duration: 200ms;
+	animation-timing-function: cubic-bezier(.39,.575,.565,1.000);
+
+    > #hero-header{
+        display: flex;
+        justify-content: center;
+
+        >.primary-header__inner {
+            width:65vw;
+
+            >.logo{
+                display: flex;
+                >img{
+                    width:40px;
+                }
+            }
+        }
+
+    }
+}
+
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
 .primary-nav ul {
@@ -141,10 +185,6 @@ header{
     }
 }
 
-.logo {
-    max-width: 100px;
-    position: relative;
-}
 
 .hero {
     margin-block-start: max(58.5vh, 8rem);
@@ -310,7 +350,6 @@ header{
 }
 
 #skills{
-    z-index:1;
     > div:first-child {
         width:55vw;
         padding-left:3rem;
@@ -416,7 +455,7 @@ header{
 
 .bubble {
     position : relative;
-    z-index:1;
+    z-index:0;
 }
 
 /* #front-project{

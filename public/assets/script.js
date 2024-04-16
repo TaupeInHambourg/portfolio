@@ -1,4 +1,40 @@
 /**
+ *  Show navbar
+**/
+
+const header = document.querySelector('.primary-header')
+const hero = document.querySelector('.parallax')
+
+// function showNavbar(){
+//   if (window.scrollY >= 800) {
+//     header.classList.add('scrolling-header');
+//   } else {
+//     header.classList.remove('scrolling-header');
+//   }
+// }
+
+const heroOptions = {
+  rootMargin: "-40px 0px 0px 0px"
+};
+
+const observer = new IntersectionObserver(function(
+  entries,
+  observer
+) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      header.classList.add("scrolling-header");
+    } else {
+      header.classList.remove("scrolling-header");
+    }
+  });
+},
+heroOptions);
+
+observer.observe(hero);
+
+
+/**
  *  Button scroll to top
 **/
 
@@ -22,7 +58,7 @@ for (let k = 0; k<btnScrollToLife.length; k++){
   btnScrollToLife[k].addEventListener('click',function() {      
     lifeSection.scrollIntoView({behavior: "smooth"})
   })
-};
+}
 
 let btnScrollToContact = document.querySelectorAll('.scrollToContactSection')
 let contactSection = document.getElementById("contact")
@@ -31,7 +67,7 @@ for (let l = 0; l<btnScrollToContact.length; l++){
   btnScrollToContact[l].addEventListener('click',function() {      
     contactSection.scrollIntoView({behavior: "smooth"})
   })
-};
+}
 
 
 /**
