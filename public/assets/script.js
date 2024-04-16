@@ -2,16 +2,8 @@
  *  Show navbar
 **/
 
-const header = document.querySelector('.primary-header')
-const hero = document.querySelector('.parallax')
-
-// function showNavbar(){
-//   if (window.scrollY >= 800) {
-//     header.classList.add('scrolling-header');
-//   } else {
-//     header.classList.remove('scrolling-header');
-//   }
-// }
+const header = document.querySelector(".primary-header")
+const hero = document.querySelector(".parallax")
 
 const heroOptions = {
   rootMargin: "-40px 0px 0px 0px"
@@ -38,9 +30,9 @@ observer.observe(hero);
  *  Button scroll to top
 **/
 
-let btnUp = document.getElementById("scrollToTop")
+const btnUp = document.getElementById("scrollToTop")
 
-btnUp.addEventListener('click',function() {      
+btnUp.addEventListener("click",function() {      
   window.scroll({
     top: 0,
     behavior: "smooth",
@@ -51,20 +43,20 @@ btnUp.addEventListener('click',function() {
  *  Buttons scroll to
 **/
 
-let btnScrollToLife = document.querySelectorAll('.scrollToLifeSection')
-let lifeSection = document.getElementById("life")
+const btnScrollToLife = document.querySelectorAll(".scrollToLifeSection")
+const lifeSection = document.getElementById("life")
 
 for (let k = 0; k<btnScrollToLife.length; k++){
-  btnScrollToLife[k].addEventListener('click',function() {      
+  btnScrollToLife[k].addEventListener("click",function() {      
     lifeSection.scrollIntoView({behavior: "smooth"})
   })
 }
 
-let btnScrollToContact = document.querySelectorAll('.scrollToContactSection')
-let contactSection = document.getElementById("contact")
+const btnScrollToContact = document.querySelectorAll(".scrollToContactSection")
+const contactSection = document.getElementById("contact")
 
 for (let l = 0; l<btnScrollToContact.length; l++){
-  btnScrollToContact[l].addEventListener('click',function() {      
+  btnScrollToContact[l].addEventListener("click",function() {      
     contactSection.scrollIntoView({behavior: "smooth"})
   })
 }
@@ -112,13 +104,12 @@ let journey = [
     }
 ];
 
-let blocButton = document.getElementById('arrow-date');
-let isActive = false;
+const blocButton = document.getElementById("arrow-date");
 
 function createDate(array){
   for (let i = 0; i<array.length; i++){
-    newDiv = document.createElement('div')
-    newDiv.classList.add('flex', 'flex-col', 'dateButton')
+    newDiv = document.createElement("div")
+    newDiv.classList.add("flex", "flex-col", "dateButton")
     newDiv.id = i
     newDiv.innerHTML = `
       <p>`+ array[i].date +`</p>
@@ -136,11 +127,11 @@ function createDate(array){
     
     blocButton.appendChild(newDiv)
 
-    let button = document.getElementsByClassName('dateButton');
+    const button = document.getElementsByClassName("dateButton");
     let data = array[i];
-    let blocData = document.getElementById('bloc-date');
+    const blocData = document.getElementById("bloc-date");
     
-    button[i].addEventListener('click',
+    button[i].addEventListener("click",
     function(){
       blocData.innerHTML = ``
       blocData.innerHTML = `
@@ -164,11 +155,11 @@ function createDate(array){
 
 createDate(journey);
 
-let allBlocDate = document.querySelectorAll('.dateButton')
+const allBlocDate = document.querySelectorAll(".dateButton")
 allBlocDate.forEach(el => el.addEventListener("click", function(){
   for (let j = 0; j<allBlocDate.length; j++){
-    if (allBlocDate[j].classList.contains('active')){
-      allBlocDate[j].classList.remove('active');
+    if (allBlocDate[j].classList.contains("active")){
+      allBlocDate[j].classList.remove("active");
     }
   }
   this.classList.add("active");
