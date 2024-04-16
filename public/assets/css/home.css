@@ -372,6 +372,7 @@ header{
         }
     }
     > div:last-child {
+        height: 200px;
 
         > .bubble:first-of-type {
             width:19%;
@@ -473,6 +474,7 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 -50px;
+    padding: 150px 200px;
 
     > H2, p{
         padding-left:3rem;
