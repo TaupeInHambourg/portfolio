@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'ghibli';
+    src: url('../font/Ghibli.otf');
+}
+
 :root{
     --main-yellow:hsl(42 100% 61%);
     --light-yellow:hsl(42 100% 95%);
@@ -16,14 +23,7 @@
     --600-pink:hsl(11 50% 60%);
     --700-pink:hsl(11 50% 70%);
     --800-pink:hsl(11 50% 80%);
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
-@font-face {
-    font-family: 'ghibli';
-    src: url('../font/Ghibli.otf');
-}
+}    
 
 html,body{
     width:100vw;
@@ -69,6 +69,7 @@ header{
 }
 h1, h2, h3{
     font-family: 'ghibli';
+    font-weight: unset;
 }
 
 h2, h3 {
@@ -138,6 +139,9 @@ h2, h3 {
 }
 .flex-row {
     flex-direction:row;
+}
+.wrap {
+    flex-wrap: wrap;
 }
 
 .icon{

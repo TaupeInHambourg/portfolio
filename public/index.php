@@ -2,12 +2,19 @@
 require '../app/Models/JourneyModel.php';  
 require '../app/Controllers/MainController.php';
 require '../app/Controllers/HomeController.php';
+require '../app/Controllers/ProjectsController.php';
+require '../app/Controllers/ProjectController.php';
 require '../app/Controllers/ErrorController.php';
+
 
 const AVAILABLE_ROUTES=[
     'home'=>[
         'action'=>'render',
         'controller'=>'HomeController',
+    ],
+    'projects'=>[
+        'action'=>'render',
+        'controller'=>'ProjectsController'
     ],
     '404'=>[
         'action'=>'render',
@@ -18,8 +25,8 @@ const AVAILABLE_ROUTES=[
 $controller;
 $action;
 
-if(isset($_GET['p']) && !empty($_GET['p'])){
-    $page = $_GET['p'];
+if(isset($_GET['v']) && !empty($_GET['v'])){
+    $page = $_GET['v'];
 }else{
     $page = 'home';
 }

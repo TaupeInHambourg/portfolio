@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /poo/MVC/planetarium/public/
+RewriteBase /portfolio/public
 
 # Ne pas réécrire les URLs pour les fichiers CSS et JavaScript
 RewriteRule \.(css|js)$ - [L]

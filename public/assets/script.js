@@ -10,8 +10,7 @@ const heroOptions = {
 };
 
 const observer = new IntersectionObserver(function(
-  entries,
-  observer
+  entries
 ) {
   entries.forEach(entry => {
     if (!entry.isIntersecting) {
