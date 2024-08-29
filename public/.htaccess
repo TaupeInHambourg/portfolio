@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /portfolio/public
+RewriteBase /porfolio/public
 
 # Ne pas réécrire les URLs pour les fichiers CSS et JavaScript
 RewriteRule \.(css|js)$ - [L]

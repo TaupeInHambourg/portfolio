@@ -163,3 +163,73 @@ allBlocDate.forEach(el => el.addEventListener("click", function(){
   }
   this.classList.add("active");
 }));
+
+
+/**
+ *  Projects section 
+**/
+
+// function fetchJSONData() {
+//   fetch("../app/Models/projects.json")
+//     .then((res) => {
+//         if (!res.ok) {
+//             throw new Error
+//                 (`HTTP error! Status: ${res.status}`);
+//         }
+//         console.log("t'es co mon chat");
+//         return res.json();
+//       })
+//     .then((data) => console.log(data))
+//     .catch((error) => console.error("Unable to fetch data:", error));
+// }
+// fetchJSONData();
+
+const constprojectsData = [
+  {
+    // "id":1,
+    "name":"Exemple",
+    "description":"Blablabla",
+    "url_project":"kidstoysshop.audreynorvez.fr",
+    "color":"444444",
+    "tag":{
+      "first":"html",
+      "second":"css",
+    }
+  },
+  {
+    "name":"Exemple2",
+    "description":"Blablabla2",
+    "url_project":"mycastle.audreynorvez.fr",
+    "color":"ffffff",
+    "tag":{
+      "first":"html",
+      "second":"css",
+    }
+  }
+]
+
+const blocProjects = document.getElementById("wrap-project")
+function presentProjects(array){
+  for (let k = 0; k<array.length; k++){
+    newDiv = document.createElement("div")
+    newDiv.innerHTML = `
+        <a href="http://localhost/portfolio/public/?v=project&p=`+ k +`">
+            <div class="project" style="background-color:#`+ array[k].color +`;">
+                <div class="flex contain-logo">
+                    <img class="project_logo" src="../public/assets/img/projects/`+ array[k].name +`/logo.png">
+                </div>
+                <div class="contain-project">
+                    <h3>`+ array[k].name +`</h3>
+                    <div class="buttons">
+                        <p class="tag">`+ array[k].tag.first +`</p>
+                        <p class="tag">`+ array[k].tag.second +`</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    `
+    blocProjects.appendChild(newDiv)
+  }
+}
+
+// presentProjects(constprojectsData);

@@ -34,7 +34,9 @@
         <div id="hero-header">
             <div class="primary-header__inner">
                 <div class="logo">
-                    <img src="../public/assets/img/flower-white-line.svg" alt="" />
+                    <a href="?v=">
+                        <img src="../public/assets/img/flower-white-line.svg" alt="" />
+                    </a>
                 </div>
                 <nav class="primary-nav">
                     <ul role="list">
@@ -80,11 +82,11 @@
             </div>
             <div class="flex">
                 <img class="icon" src="../public/assets/img/icons/work.png">
-                <p>Mais aussi mon chemin professionnel, très varié et qui m'a fais grandir et toujours avancer.</p>
+                <p>Mais aussi mon chemin professionnel, très varié, qui m'a fais grandir et avancer.</p>
             </div>
             <div class="flex">
                 <img class="icon" src="../public/assets/img/icons/idea.png">
-                <p>Enfin tous les <i>softs skills</i> que ces expériences m'ont apporté et m'ont permis de développer.</p>
+                <p>Enfin, tous les <i>softs skills</i> que ces expériences m'ont apporté et que j'ai développer.</p>
             </div>
         </div>
     </section>
@@ -101,88 +103,32 @@
             <img class="bubble" src="../public/assets/img/bulles/bulle-design.png">
         </div>
     </section>
-    
+
     <section id="projects">
         <h2>Mes réalisations</h2>
         <p>Voici quelques projets réalisés depuis mon entrée en première année.</p>
         <div>
+            <!-- <div id="wrap-project" class="flex wrap"></div> -->
             <div id="wrap-project" class="flex wrap">
-                <a href="http://localhost/portfolio/public/?v=projets&p=1">
-                    <div class="project" style="background-color:#d99a8c;">
-                        <div class="flex contain-logo">
-                            <img class="project_logo" src="../public/assets/img/default-image.png">
-                        </div>
-                        <div class="contain-project">
-                            <h3>Nom du projet</h3>
-                            <div class="buttons">
-                                <p class="tag">html</p>
-                                <p class="tag">css</p>
+                <?php foreach ($data as $project): ?>
+                    <a href="http://localhost/portfolio/public/?v=project&p=<?=$project['ID'];?>">
+                        <div class="project" style="background-color:#<?=$project['primary_color'];?>;">
+                            <div class="flex contain-logo">
+                                <img class="project_logo" src="../public/assets/img/projects/<?=$project['logo'];?>">
+                            </div>
+                            <div class="contain-project">
+                                <h3><?=$project['name'];?></h3>
+                                <div class="buttons">
+                                    <p class="tag"><?=$project['tag_first'];?></p>
+                                    <p class="tag"><?=$project['tag_second'];?></p>
+                                    <p class="tag"><?=$project['tag_third'];?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-                <div class="project" style="background-color:#d99a8c;">
-                    <div class="flex contain-logo">
-                        <img class="project_logo" src="../public/assets/img/default-image.png">
-                    </div>
-                    <div class="contain-project">
-                        <h3>Nom du projet</h3>
-                        <div class="buttons">
-                            <p class="tag">html</p>
-                            <p class="tag">css</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project" style="background-color:#d99a8c;">
-                    <div class="flex contain-logo">
-                        <img class="project_logo" src="../public/assets/img/default-image.png">
-                    </div>
-                    <div class="contain-project">
-                        <h3>Nom du projet</h3>
-                        <div class="buttons">
-                            <p class="tag">html</p>
-                            <p class="tag">css</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project" style="background-color:#d99a8c;">
-                    <div class="flex contain-logo">
-                        <img class="project_logo" src="../public/assets/img/default-image.png">
-                    </div>
-                    <div class="contain-project">
-                        <h3>Nom du projet</h3>
-                        <div class="buttons">
-                            <p class="tag">html</p>
-                            <p class="tag">css</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project" style="background-color:#d99a8c;">
-                    <div class="flex contain-logo">
-                        <img class="project_logo" src="../public/assets/img/default-image.png">
-                    </div>
-                    <div class="contain-project">
-                        <h3>Nom du projet</h3>
-                        <div class="buttons">
-                            <p class="tag">html</p>
-                            <p class="tag">css</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="project" style="background-color:#d99a8c;">
-                    <div class="flex contain-logo">
-                        <img class="project_logo" src="../public/assets/img/default-image.png">
-                    </div>
-                    <div class="contain-project">
-                        <h3>Nom du projet</h3>
-                        <div class="buttons">
-                            <p class="tag">html</p>
-                            <p class="tag">css</p>
-                        </div>
-                    </div>
-                </div>
+                    </a>
+                <?php endforeach ?>
             </div>
-            <a href="#" class="Button PrimaryPinkButton">Voir tous mes projets</a>
+            <a href="./?v=projects" class="Button PrimaryPinkButton">Voir tous mes projets</a>
         </div>
     </section>
 </main>
