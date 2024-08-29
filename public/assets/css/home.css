@@ -199,7 +199,6 @@ header{
     font-size: 6rem;
     max-width: 10ch;
     line-height: 1;
-    /* font-style: italic; */
     font-weight: 900;
     position: relative;
 
@@ -485,7 +484,6 @@ header{
     > div {
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap:2rem;
         padding-top: 3vh;
     }
@@ -515,7 +513,9 @@ header{
         width:100%;
         height:100%;
         > img {
-            width:10vw;
+            position:relative;
+            max-width:10vw;
+            max-height: 20dvh;
         }
     }
     &:hover {
@@ -529,14 +529,6 @@ header{
             display: block;
         }
     }
-}
-
-#wrap-project{
-    gap: 4rem;
-}
-
-.project_logo {
-    position:relative;
 }
 
 

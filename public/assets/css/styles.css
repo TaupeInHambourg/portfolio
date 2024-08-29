@@ -23,6 +23,10 @@
     --600-pink:hsl(11 50% 60%);
     --700-pink:hsl(11 50% 70%);
     --800-pink:hsl(11 50% 80%);
+
+    --main-almond: hsl(131 32% 62%);
+    --500-almond: hsl(131 32% 50%);
+    --600-almond: hsl(131 32% 60%);
 }    
 
 html,body{
@@ -70,6 +74,7 @@ header{
 h1, h2, h3{
     font-family: 'ghibli';
     font-weight: unset;
+    margin:0;
 }
 
 h2, h3 {
@@ -88,11 +93,40 @@ h2, h3 {
         cursor: pointer;
     }
 }
+
+.pills{
+    width:70%;
+    margin:10dvh 15%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
+
+    >p{
+        margin:0;
+        display: flex;
+        padding: 10px 38px;
+        gap: 10px;
+        border-radius: 50px;
+        width: fit-content;
+        font-weight: 600;
+        font-size: 20px;
+        background-color: var(--600-almond);
+    
+        &:hover{
+            cursor: pointer;
+            background-color: var(--500-almond);
+        }
+    }
+}
     
 .buttons{
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 1.5rem;
 }
 
 .PrimaryPinkButton{
@@ -151,4 +185,8 @@ h2, h3 {
 
 .scrollTo{
     cursor: pointer;
+}
+
+.wrap-project{
+    justify-content: space-evenly;
 }

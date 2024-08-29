@@ -3,6 +3,7 @@ class ProjectsModel{
     private $ID;
     private $name;
     private $description;
+    private $short_description;
     private $primary_color;
     private $secondary_color;
     private $logo;

@@ -1,1 +1,32 @@
-<h1>PROJECTS</H1>
+<div id="hero-section">
+    <div>
+        <h1>Découvrez mes projets</H1>
+        <p>Réalisés en groupe ou seule, dans le cadre de ma formation ou en projet personnel.
+    </div>
+    <div class="pills">
+        <p>HTML / CSS</p>
+        <p>Vue.JS</p>
+        <p>React.JS</p>
+        <p>PHP / MySQL</p>
+        <p>WP / Elementor</p>
+        <p>WP / Divi</p>
+        <p>WooCommerce</p>
+    </div>
+</div>
+<div id=projects-section>
+    <div class="flex wrap wrap-project">
+        <?php foreach ($data as $project): ?>
+            <a href="http://localhost/portfolio/public/?v=project&p=<?=$project['ID'];?>">
+                <div class="project" style="background-color:#<?=$project['primary_color'];?>;">
+                    <div class="flex contain-logo">
+                        <img class="project_logo" src="../public/assets/img/projects/<?=$project['logo'];?>">
+                    </div>
+                    <div class="contain-project">
+                        <h3><?=$project['name'];?></h3>
+                        <p><?=$project['short_description'];?></p>
+                    </div>
+                </div>
+            </a>
+        <?php endforeach ?>
+    </div>
+</div>

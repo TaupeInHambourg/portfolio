@@ -108,13 +108,12 @@
         <h2>Mes réalisations</h2>
         <p>Voici quelques projets réalisés depuis mon entrée en première année.</p>
         <div>
-            <!-- <div id="wrap-project" class="flex wrap"></div> -->
-            <div id="wrap-project" class="flex wrap">
+            <div class="flex wrap wrap-project">
                 <?php foreach ($data as $project): ?>
                     <a href="http://localhost/portfolio/public/?v=project&p=<?=$project['ID'];?>">
                         <div class="project" style="background-color:#<?=$project['primary_color'];?>;">
                             <div class="flex contain-logo">
-                                <img class="project_logo" src="../public/assets/img/projects/<?=$project['logo'];?>">
+                                <img src="../public/assets/img/projects/<?=$project['logo'];?>">
                             </div>
                             <div class="contain-project">
                                 <h3><?=$project['name'];?></h3>
@@ -128,7 +127,9 @@
                     </a>
                 <?php endforeach ?>
             </div>
-            <a href="./?v=projects" class="Button PrimaryPinkButton">Voir tous mes projets</a>
+            <div class="flex wrap-project">
+                <a href="./?v=projects" class="Button PrimaryPinkButton">Voir tous mes projets</a>
+            </div>
         </div>
     </section>
 </main>
