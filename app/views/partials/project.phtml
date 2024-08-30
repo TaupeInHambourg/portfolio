@@ -1,0 +1,13 @@
+        <?php print_r($data); foreach ($data as $project): ?>
+            <a href="http://localhost/portfolio/public/?v=project&p=<?=$project['ID'];?>">
+                <div class="project" style="background-color:#<?=$project['primary_color'];?>;">
+                    <div class="flex contain-logo">
+                        <img class="project_logo" src="../public/assets/img/projects/<?=$project['logo'];?>">
+                    </div>
+                    <div class="contain-project">
+                        <h3><?=$project['name'];?></h3>
+                        <p><?=$project['short_description'];?></p>
+                    </div>
+                </div>
+            </a>
+            <?php endforeach ?>

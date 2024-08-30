@@ -1,19 +1,26 @@
 #hero-section{
     background-color: var(--main-blue);
-    height:40dvh;
+    height:60dvh;
     color: var(--light-yellow);
     padding: 150px 200px;
+
     >div:first-of-type{
         padding-top:10dvh;
+        >h1{
+            font-size: 40px;
+        }
+        >p{
+            font-size: 20px;
+        }
     }
 }
 #projects-section{
     background-image: url(../img/front-real.png);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: 0 -50px;
-    padding: 150px 200px;
+    background-position: 0 -45px;
+    padding: 150px 300px;
     >div{
-        margin-top:-25dvh;
+        margin-top:-42dvh;
     }
 }

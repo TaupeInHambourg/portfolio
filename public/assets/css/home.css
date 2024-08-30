@@ -256,12 +256,12 @@ header{
     width:30%;
 }
 
-#life, #skills{
+#homeSectionLife, #homeSectionSkills{
     background-color: var(--main-blue);
     color:var(--light-yellow);
 }
 
-#life > h2{
+#homeSectionLife > h2{
     padding-left:3rem;
 }
 
@@ -350,7 +350,7 @@ header{
     }
 }
 
-#skills{
+#homeSectionSkills{
     > div:first-child {
         width:55vw;
         padding-left:3rem;
@@ -470,7 +470,7 @@ header{
     left: -1px;
 } */
 
-#projects{
+#homeSectionProjects{
     background-image: url(../img/front-real.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -485,14 +485,17 @@ header{
         display: flex;
         flex-direction: column;
         gap:2rem;
-        padding-top: 3vh;
+        padding: 3vh 5vw 0;
+        >div:last-of-type {
+            justify-content: center;
+        }
     }
 }
 
-.project {
+.cardProject {
     align-items: center;
     justify-content: center;
-    width:15vw;
+    width:14vw;
     height: 26vh;
     border-radius: 4px;
     cursor: pointer;

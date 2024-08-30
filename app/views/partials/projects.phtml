@@ -4,29 +4,62 @@
         <p>Réalisés en groupe ou seule, dans le cadre de ma formation ou en projet personnel.
     </div>
     <div class="pills">
-        <p>HTML / CSS</p>
-        <p>Vue.JS</p>
-        <p>React.JS</p>
-        <p>PHP / MySQL</p>
-        <p>WP / Elementor</p>
-        <p>WP / Divi</p>
-        <p>WooCommerce</p>
+        <p class="filter">HTML / CSS</p>
+        <p class="filter">Vue.JS</p>
+        <p class="filter">React.JS</p>
+        <p class="filter">PHP / MySQL</p>
+        <p class="filter">WP / Elementor</p>
+        <p class="filter">WP / Divi</p>
+        <p class="filter">WooCommerce</p>
     </div>
 </div>
-<div id=projects-section>
-    <div class="flex wrap wrap-project">
-        <?php foreach ($data as $project): ?>
-            <a href="http://localhost/portfolio/public/?v=project&p=<?=$project['ID'];?>">
-                <div class="project" style="background-color:#<?=$project['primary_color'];?>;">
-                    <div class="flex contain-logo">
-                        <img class="project_logo" src="../public/assets/img/projects/<?=$project['logo'];?>">
-                    </div>
-                    <div class="contain-project">
-                        <h3><?=$project['name'];?></h3>
-                        <p><?=$project['short_description'];?></p>
-                    </div>
-                </div>
-            </a>
-        <?php endforeach ?>
+<div id="projects-section">
+    <div id="projects" class="flex wrap wrap-project">
     </div>
 </div>
+
+<script>
+    let data = JSON.parse('<?= json_encode($data); ?>');
+    const wrapProjects = document.getElementById("projects");
+    const filter = document.getElementsByClassName("filter");
+    // const body = document.querySelector("body");
+
+    for (let index = 0; index < filter.length; index++) {
+        filter[index].addEventListener('click', (event)=>{
+            let tag = (filter[index].innerText);
+            console.log(tag)
+            // loadData(data, tag);
+        })
+    }
+    // body.addEventListener('click', (event)=>{loadData(data)})
+    
+    function loadData(array, limit){
+        console.log(data);
+        if(limit !== 'undefined'){
+            let filteredArray = array.filter((limit)=>{
+                return (limit==tag_first || limit==tag_second || limit==tag_third)
+            })
+        }
+        // wrapProjects.innerHTML = ``;
+        for (let i = 0; i < array.length; i++) {
+            // console.log(filter[i].innerText);
+            newDiv = document.createElement("div");
+            newDiv.id = i;
+            newDiv.innerHTML =  `
+                <a href="http://localhost/portfolio/public/?v=project&p=`+ array[i].ID +`">
+                    <div class="cardProject" style="background-color:#`+ array[i].primary_color +`;">
+                        <div class="flex contain-logo">
+                            <img class="project_logo" src="../public/assets/img/projects/`+ data[i].logo +`">
+                        </div>
+                        <div class="contain-project">
+                            <h3>`+ array[i].name +`</h3>
+                            <p>`+ array[i].short_description +`</p>
+                        </div>
+                    </div>
+                </a>
+            `;
+            wrapProjects.appendChild(newDiv);
+        }
+    }
+    loadData(data, );
+</script>

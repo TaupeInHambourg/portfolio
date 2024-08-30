@@ -70,7 +70,7 @@
 </a>
 
 <main>
-    <section id="life">
+    <section id="homeSectionLife">
         <h2>Mon parcours</h2>
         <div id="arrow-date" class="flex">
         </div>
@@ -91,7 +91,7 @@
         </div>
     </section>
     
-    <section id="skills">
+    <section id="homeSectionSkills">
         <div>
             <h2>Mes compétences</h2>
             <P>Depuis mon entrée à My Digital School,  j’ai eu l’occasion de développer des compétences en web design, par la réalisation de chartes graphiques, de logo, de maquettes mais aussi d’affiches, de posts réseaux...<br>J’ai également appris différents langages et outils ce qui m’a permis de réaliser plusieurs projets comme des sites vitrines, e-commerce ou des blogs.</P>
@@ -104,14 +104,14 @@
         </div>
     </section>
 
-    <section id="projects">
+    <section id="homeSectionProjects">
         <h2>Mes réalisations</h2>
         <p>Voici quelques projets réalisés depuis mon entrée en première année.</p>
         <div>
             <div class="flex wrap wrap-project">
                 <?php foreach ($data as $project): ?>
                     <a href="http://localhost/portfolio/public/?v=project&p=<?=$project['ID'];?>">
-                        <div class="project" style="background-color:#<?=$project['primary_color'];?>;">
+                        <div class="cardProject" style="background-color:#<?=$project['primary_color'];?>;">
                             <div class="flex contain-logo">
                                 <img src="../public/assets/img/projects/<?=$project['logo'];?>">
                             </div>
@@ -127,7 +127,7 @@
                     </a>
                 <?php endforeach ?>
             </div>
-            <div class="flex wrap-project">
+            <div class="flex">
                 <a href="./?v=projects" class="Button PrimaryPinkButton">Voir tous mes projets</a>
             </div>
         </div>

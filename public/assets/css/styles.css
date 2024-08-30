@@ -95,8 +95,8 @@ h2, h3 {
 }
 
 .pills{
-    width:70%;
-    margin:10dvh 15%;
+    width:60%;
+    margin:10dvh 20%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -188,5 +188,6 @@ h2, h3 {
 }
 
 .wrap-project{
-    justify-content: space-evenly;
+    justify-content: space-between;
+    row-gap: 6vh;
 }

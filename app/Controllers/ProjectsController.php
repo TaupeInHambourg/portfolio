@@ -4,7 +4,7 @@ class ProjectsController extends MainController{
 
   public function renderProjects(){
     $dataInstance = new ProjectsModel();
-    $this->data = $dataInstance->getProjects();
+    $this->data = $dataInstance->getProjects(NULL);
     $this->render();
   }
 

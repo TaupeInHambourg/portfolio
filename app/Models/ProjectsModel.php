@@ -13,9 +13,13 @@ class ProjectsModel{
     private $tag_second;
     private $tag_third;
 
-    public function getProjects():array{
+    public function getProjects($limit):array{
         $dbh = DataBase::connectPDO();
-        $query = $dbh->prepare('SELECT * FROM projets');
+        if (!empty($limit)){
+            $query = $dbh->prepare('SELECT * FROM projets LIMIT '.$limit);
+        } else {
+            $query = $dbh->prepare('SELECT * FROM projets');
+        }
         $query->execute();
         $projects = $query->fetchAll(PDO::FETCH_ASSOC);
         return $projects;
@@ -23,11 +27,20 @@ class ProjectsModel{
 
     public function getProjectById(int $id):array{
         $dbh = DataBase::connectPDO();
-        $query = $dbh->prepare('SELECT * FROM prjects WHERE id= :id');
+        $query = $dbh->prepare('SELECT * FROM projects WHERE id= :id');
         $query->bindParam('id',$id);
         $query->execute();
         $project = $query->fetchAll(PDO::FETCH_ASSOC);
         return $project;
+    }
+
+    public function getProjectByTag($tag):array{
+        $dbh = DataBase::connectPDO();
+        $query = $dbh->prepare('SELECT * FROM projects WHERE tag_first= :tag OR tag_second= :tag OR tag_third= :tag');
+        $query->bindParam('tag',$tag);
+        $query->execute();
+        $projects = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $projects;
     }
 
 }
