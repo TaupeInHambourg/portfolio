@@ -4,13 +4,14 @@
         <p>Réalisés en groupe ou seule, dans le cadre de ma formation ou en projet personnel.
     </div>
     <div class="pills">
-        <p class="filter">HTML / CSS</p>
-        <p class="filter">Vue.JS</p>
-        <p class="filter">React.JS</p>
-        <p class="filter">PHP / MySQL</p>
-        <p class="filter">WP / Elementor</p>
-        <p class="filter">WP / Divi</p>
-        <p class="filter">WooCommerce</p>
+        <button class="filter" onclick="filterSelection('all')">Tout voir</button>
+        <button class="filter" onclick="filterSelection('html/css')">HTML / CSS</button>
+        <button class="filter" onclick="filterSelection('vue.js')">Vue.JS</button>
+        <button class="filter" onclick="filterSelection('react.js')">React.JS</button>
+        <button class="filter" onclick="filterSelection('php/mysql')">PHP / MySQL</button>
+        <button class="filter" onclick="filterSelection('elementor')">WP / Elementor</button>
+        <button class="filter" onclick="filterSelection('divi')">WP / Divi</button>
+        <button class="filter" onclick="filterSelection('woocomerce')">WooCommerce</button>
     </div>
 </div>
 <div id="projects-section">
@@ -22,29 +23,13 @@
     let data = JSON.parse('<?= json_encode($data); ?>');
     const wrapProjects = document.getElementById("projects");
     const filter = document.getElementsByClassName("filter");
-    // const body = document.querySelector("body");
-
-    for (let index = 0; index < filter.length; index++) {
-        filter[index].addEventListener('click', (event)=>{
-            let tag = (filter[index].innerText);
-            console.log(tag)
-            // loadData(data, tag);
-        })
-    }
-    // body.addEventListener('click', (event)=>{loadData(data)})
     
-    function loadData(array, limit){
-        console.log(data);
-        if(limit !== 'undefined'){
-            let filteredArray = array.filter((limit)=>{
-                return (limit==tag_first || limit==tag_second || limit==tag_third)
-            })
-        }
-        // wrapProjects.innerHTML = ``;
+    function loadData(array){
         for (let i = 0; i < array.length; i++) {
             // console.log(filter[i].innerText);
             newDiv = document.createElement("div");
             newDiv.id = i;
+            newDiv.innerHTML =  ``
             newDiv.innerHTML =  `
                 <a href="http://localhost/portfolio/public/?v=project&p=`+ array[i].ID +`">
                     <div class="cardProject" style="background-color:#`+ array[i].primary_color +`;">
@@ -58,8 +43,53 @@
                     </div>
                 </a>
             `;
+            newDiv.classList.add("filterDiv",array[i].tag_first,array[i].tag_second,array[i].tag_third)
             wrapProjects.appendChild(newDiv);
         }
     }
-    loadData(data, );
+    loadData(data);
+
+    filterSelection("all")
+
+    function filterSelection(c) {
+        let x = document.getElementsByClassName("filterDiv");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+            removeClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
+        }
+    }
+
+    function addClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+        }
+    }
+
+    function removeClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+                arr1.splice(arr1.indexOf(arr2[i]), 1);     
+            }
+        }
+        element.className = arr1.join(" ");
+    }
+
+    // // Add active class to the current button (highlight it)
+    // var btnContainer = document.getElementById("myBtnContainer");
+    // var btns = btnContainer.getElementsByClassName("btn");
+    // for (var i = 0; i < btns.length; i++) {
+    //     btns[i].addEventListener("click", function(){
+    //         var current = document.getElementsByClassName("active");
+    //         current[0].className = current[0].className.replace(" active", "");
+    //         this.className += "active";
+    //     });
+    // }
+
 </script>

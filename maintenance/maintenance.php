@@ -1,6 +1,8 @@
-<?php require '../app/views/layouts/header.phtml'; ?>
+<?php
+    require '../app/views/layouts/head.phtml';
+?>
 
-<div class="parallax">
+<div id="maintenance">
     <div class="hero">
         <div class="wrapper">
             <H1>Mon portfolio arrive bientôt...</h1>
@@ -11,7 +13,4 @@
             </div>
         </div>
     </div>
-    <img class="parallax__bg" src="../public/assets/img/hero.png">
 </div>
-
-<?php require '../app/views/layouts/footer.phtml'; ?>

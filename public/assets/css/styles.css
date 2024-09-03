@@ -93,35 +93,6 @@ h2, h3 {
         cursor: pointer;
     }
 }
-
-.pills{
-    width:60%;
-    margin:10dvh 20%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    column-gap: 2rem;
-    row-gap: 1.5rem;
-
-    >p{
-        margin:0;
-        display: flex;
-        padding: 10px 38px;
-        gap: 10px;
-        border-radius: 50px;
-        width: fit-content;
-        font-weight: 600;
-        font-size: 20px;
-        background-color: var(--600-almond);
-    
-        &:hover{
-            cursor: pointer;
-            background-color: var(--500-almond);
-        }
-    }
-}
     
 .buttons{
     display: flex;

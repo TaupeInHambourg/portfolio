@@ -1,10 +1,12 @@
 RewriteEngine On
-RewriteBase /porfolio/public
+RewriteBase /portfolio/public/
 
-# Ne pas réécrire les URLs pour les fichiers CSS et JavaScript
-RewriteRule \.(css|js)$ - [L]
+# Ne pas réécrire les URLs pour les fichiers existants
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteCond %{REQUEST_URI} !^/portfolio/public/maintenance\.php$ [NC]
 
-# Réécrire toutes les URLs vers index.php
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
+# Réécrire toutes les autres URLs vers index.php
+# RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
+RewriteRule ^(.*)$ maintenance.php [R=302,L]

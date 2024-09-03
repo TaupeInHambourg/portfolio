@@ -44,7 +44,7 @@ btnUp.addEventListener("click",function() {
 **/
 
 const btnScrollToLife = document.querySelectorAll(".scrollToLifeSection")
-const lifeSection = document.getElementById("life")
+const lifeSection = document.getElementById("homeSectionLife")
 
 for (let k = 0; k<btnScrollToLife.length; k++){
   btnScrollToLife[k].addEventListener("click",function() {      
