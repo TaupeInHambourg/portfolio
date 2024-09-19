@@ -16,8 +16,8 @@
 }
 
 .pills{
-    width:60%;
-    margin:10dvh 20%;
+    width:80%;
+    margin:10dvh 10%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
