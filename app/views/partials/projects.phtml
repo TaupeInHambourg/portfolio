@@ -32,9 +32,6 @@
             wrapProjects.appendChild(newDiv);
         } else {
             for (let i = 0; i < array.length; i++) {
-                console.log("datas",data)
-                console.log("data",data[i])
-                console.log("logo",data[i].logo, "name", data[i].name)
                 newDiv = document.createElement("div");
                 newDiv.id = i;
                 newDiv.innerHTML =  ``
@@ -42,7 +39,7 @@
                     <a href="http://localhost/portfolio/public/?v=project&p=`+ array[i].ID +`">
                         <div class="cardProject" style="background-color:#`+ array[i].primary_color +`;">
                             <div class="flex contain-logo">
-                                <img class="project_logo" src="../public/assets/img/projects/`+ data[i].logo +`">
+                                <img class="project_logo" src="../public/assets/img/projects/`+ array[i].logo +`">
                             </div>
                             <div class="contain-project">
                                 <h3>`+ array[i].name +`</h3>
